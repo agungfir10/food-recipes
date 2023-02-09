@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/recipesFragment">
+
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.agungfir.foodrecipes.ui.recipes.RecipesFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipes">
+        <action
+            android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
+            app:destination="@id/recipesBottomSheet" />
+        <argument
+            android:name="backFromBottomSheet"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteRecipesFragment"
+        android:name="com.agungfir.foodrecipes.ui.favorites.FavoriteRecipesFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite_recipes" >
+        <action
+            android:id="@+id/action_favoriteRecipesFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodJokeFragment"
+        android:name="com.agungfir.foodrecipes.ui.foodjoke.FoodJokeFragment"
+        android:label="Food Joke"
+        tools:layout="@layout/fragment_food_joke" />
+    <dialog
+        android:id="@+id/recipesBottomSheet"
+        android:name="com.agungfir.foodrecipes.ui.recipes.bottomsheet.RecipesBottomSheet"
+        android:label="Filter Recipes"
+        tools:layout="@layout/recipes_bottom_sheet">
+        <action
+            android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </dialog>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.agungfir.foodrecipes.ui.detail.DetailActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_detail">
+        <argument
+            android:name="result"
+            app:argType="com.agungfir.foodrecipes.models.FoodRecipe" />
+    </activity>
+</navigation>

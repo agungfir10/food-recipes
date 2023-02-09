@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    app:layoutDescription="@xml/fragment_overview_xml_constraintlayout_scene"
+    tools:context=".ui.detail.OverviewFragment"
+    tools:ignore="ScrollViewSize">
+
+    <ImageView
+        android:id="@+id/ivFood"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:contentDescription="@string/overview"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_overlay"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFood"
+        app:layout_constraintEnd_toEndOf="@+id/ivFood"
+        app:layout_constraintStart_toStartOf="@+id/ivFood"
+        app:layout_constraintTop_toTopOf="@+id/ivFood" />
+
+    <TextView
+        android:id="@+id/tvMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="100" />
+
+    <ImageView
+        android:id="@+id/ivTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/time_cook"
+        android:src="@drawable/ic_clock"
+        app:layout_constraintBottom_toTopOf="@+id/tvMinutes"
+        app:layout_constraintEnd_toEndOf="@+id/tvMinutes"
+        app:layout_constraintStart_toStartOf="@+id/tvMinutes"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMinutes"
+        app:layout_constraintEnd_toStartOf="@+id/tvMinutes"
+        app:layout_constraintTop_toTopOf="@+id/tvMinutes"
+        tools:text="100" />
+
+    <ImageView
+        android:id="@+id/ivLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/favoriteRecipesFragment"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintBottom_toTopOf="@+id/tvLikes"
+        app:layout_constraintEnd_toEndOf="@+id/tvLikes"
+        app:layout_constraintStart_toStartOf="@+id/tvLikes"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/titleColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFood"
+        tools:text="Title Lorem Ipsum Dolor Sit Amet" />
+
+    <ImageView
+        android:id="@+id/ivVegetarian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_check"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:tint="@color/darkGray" />
+
+    <TextView
+        android:id="@+id/tvVegetarian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/vegetarian"
+        app:layout_constraintBottom_toBottomOf="@+id/ivVegetarian"
+        app:layout_constraintStart_toEndOf="@+id/ivVegetarian"
+        app:layout_constraintTop_toTopOf="@+id/ivVegetarian" />
+
+    <ImageView
+        android:id="@+id/ivGluttenFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVegetarian"
+        app:layout_constraintStart_toEndOf="@+id/tvVegetarian"
+        app:layout_constraintTop_toTopOf="@+id/tvVegetarian"
+        app:tint="@color/darkGray" />
+
+    <TextView
+        android:id="@+id/tvGluttenFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/glutten_free"
+        app:layout_constraintBottom_toBottomOf="@+id/ivGluttenFree"
+        app:layout_constraintStart_toEndOf="@+id/ivGluttenFree"
+        app:layout_constraintTop_toTopOf="@+id/ivGluttenFree" />
+
+    <ImageView
+        android:id="@+id/ivHealthy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGluttenFree"
+        app:layout_constraintStart_toEndOf="@+id/tvGluttenFree"
+        app:layout_constraintTop_toTopOf="@+id/tvGluttenFree"
+        app:tint="@color/darkGray" />
+
+    <TextView
+        android:id="@+id/tvHealthy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/healthy"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHealthy"
+        app:layout_constraintStart_toEndOf="@+id/ivHealthy"
+        app:layout_constraintTop_toTopOf="@+id/ivHealthy" />
+
+    <ImageView
+        android:id="@+id/ivVegan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_check"
+        app:layout_constraintStart_toStartOf="@+id/ivVegetarian"
+        app:layout_constraintTop_toBottomOf="@+id/ivVegetarian"
+        app:tint="@color/darkGray" />
+
+    <TextView
+        android:id="@+id/tvVegan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/vegan"
+        app:layout_constraintBottom_toBottomOf="@+id/ivVegan"
+        app:layout_constraintStart_toEndOf="@+id/ivVegan"
+        app:layout_constraintTop_toTopOf="@+id/ivVegan" />
+
+    <ImageView
+        android:id="@+id/ivDairyFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVegan"
+        app:layout_constraintStart_toStartOf="@+id/ivGluttenFree"
+        app:layout_constraintTop_toTopOf="@+id/tvVegan"
+        app:tint="@color/darkGray" />
+
+    <TextView
+        android:id="@+id/tvDairyFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/dairy_free"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDairyFree"
+        app:layout_constraintStart_toEndOf="@+id/ivDairyFree"
+        app:layout_constraintTop_toTopOf="@+id/ivDairyFree" />
+
+    <ImageView
+        android:id="@+id/ivCheap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDairyFree"
+        app:layout_constraintStart_toStartOf="@+id/ivHealthy"
+        app:layout_constraintTop_toTopOf="@+id/tvDairyFree"
+        app:tint="@color/darkGray" />
+
+    <TextView
+        android:id="@+id/tvCheap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/cheap"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCheap"
+        app:layout_constraintStart_toEndOf="@+id/ivCheap"
+        app:layout_constraintTop_toTopOf="@+id/ivCheap" />
+
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/descriptionColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivVegan"
+        app:layout_constraintTop_toBottomOf="@+id/ivVegan"
+        tools:text="@string/lorem" />
+</androidx.constraintlayout.motion.widget.MotionLayout>
